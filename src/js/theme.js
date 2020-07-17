@@ -28,15 +28,9 @@ const switchTheme = event => {
 };
 
 const themeSet = function() {
-  if (localStorage.getItem('theme') !== null) {
-    if (localStorage.getItem('theme') === Theme.LIGHT) {
-      inputRef.checked = false;
-      body.classList.add(Theme.LIGHT);
-    }
-    if (localStorage.getItem('theme') === Theme.DARK) {
-      inputRef.checked = true;
-      body.classList.add(Theme.DARK);
-    }
+  if (localStorage.getItem('theme') === Theme.DARK) {
+    inputRef.checked = true;
+    return body.classList.add(Theme.DARK);
   }
   body.classList.add(Theme.LIGHT);
 };
